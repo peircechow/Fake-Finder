@@ -45,7 +45,7 @@ body{
 	font-size: 17px;
 	background: #2ecc71 url('images/bg.jpg') no-repeat center center fixed;
 	background-size: cover;
-	font-family: 'Lato',"Open Sans", Arial;
+	font-family: 'Arial',"sans-serif", Helvetica;
 	transition: ease-in-out all 300ms;
 }
 .soon {
@@ -66,12 +66,12 @@ body{
 	text-align: center;
 	color: #fff;
 	font-size: 3em;
-	font-family: 'Lato';
+	font-family: 'Arial',"sans-serif", Helvetica;
 	font-weight: 400;
 }
 .soon p{
 	color: #fff;
-	font-family: 'Lato';
+	font-family: 'Arial',"sans-serif", Helvetica;
 	font-weight: 300;
 	text-align: center;
   	margin: 0 auto;
@@ -87,7 +87,7 @@ input{
 }
 .soon form input[type="file"]{
 	color: #577a9d;
-	font-family: 'Lato';
+	font-family: 'Arial',"sans-serif", Helvetica;
 	font-weight: 300;
 	font-size: 1em;
 	padding-top: 0.3em;
@@ -100,7 +100,7 @@ input{
 	border: 2px solid #fff;
 	padding: 0 1.5em;
 	padding-bottom: 0.1em;
-	font-family: 'Lato';
+	font-family: 'Arial',"sans-serif", Helvetica;
 	font-weight: 400;
 	font-size: 1em;
 }
@@ -113,7 +113,7 @@ input{
     position:relative;
     margin-bottom:6%;
     right: 8%;
-    font-family: 'Lato';
+    font-family: 'Arial',"sans-serif", Helvetica;
 }
 .clock {
     font-size:75px;
@@ -130,13 +130,13 @@ input{
 	text-align: center;
 	color: #fff;
 	font-size: 3em;
-	font-family: 'Lato';
+	font-family: 'Arial',"sans-serif", Helvetica;
 	font-weight: 400;
 }
 
 .output p{
 	color: #fff;
-	font-family: 'Lato';
+	font-family: 'Arial',"sans-serif", Helvetica;
 	font-weight: 300;
 	text-align: center;
   	margin: 0 auto;
