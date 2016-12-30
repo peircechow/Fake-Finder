@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="{{ url_for('static', filename='js/jquery-3.1.1.js') }}" ></script>
+    <script>
+        $(document).ready(function(){
+            $("#upload").click(function(){
+                i = 0;
+                setInterval(function() {
+                    i++;
+                    if (i%8>=4){
+                    $("#loading").html("<h1>Loading "+Array(i%4+1).join(".")+"</h1>");
+                    }
+                    else {
+                        $("#loading").html("<h1>Please Wait "+Array(i%4+1).join(".")+"</h1>");
+                     }
+                }, 500);
+
+	        });
+        });
+    </script>
+
+	<title>Fake Forgery Detection</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css')}}">
+
+<!-- DIGIRAIN stuff-->
+	<link rel="stylesheet" href="{{url_for('static', filename='css/matrix.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/loading.css')}}">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+        body {
+            color: #ffffff;
+            font-family: 'Lato',"Open Sans", Arial;
+                }
+    </style>
+
+</head>
+<body>
+	<!-- DIGIRAIN stuff-->
+	<canvas id="DigiRain"></canvas>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/matrix.min.js') }}" async defer>
+	</script>
+	<div class="soon" id="loading">
+		<h1>Fake Finder</h1>
+		<p> 		 
+			Detecting your fakes for you.
+		</p>
+
+        <form method="post" enctype="multipart/form-data">
+			<input type="file" name="the_file" >
+
+        <select name="method" style="">
+            <option value="hsv">HSV</option>
+            <option value="ela">ELA</option>
+            <option value="lbp">LBP</option>
+            <option value="dwt">DWT</option>
+            <option value="cd">Clone Detection</option>
+        </select>
+
+			<input id="upload" type="Submit" value="Upload">
+		</form>
+        <p><a href="/about" style="text-decoration: none; color: #fff;
+            ">More info</a></p>
+    </div>
+
+
+
+</body>
+
+</html>

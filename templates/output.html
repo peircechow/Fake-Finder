@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        a{
+	font-weight: 400;
+	text-align: center;
+  	margin: 0 auto;
+  	font-size: 1.2em;
+  	padding: 1.2em 0;
+    }
+    </style>
+
+    <meta charset="UTF-8">
+    <title>Output</title>
+
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css')}}">
+	<link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+
+<!-- DIGIRAIN stuff-->
+	<link rel="stylesheet" href="{{url_for('static', filename='css/matrix.min.css')}}">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+</head>
+<body>
+    <img src="{{ img_src }}" style = "width: 100%;">
+
+
+    <div class="output">
+        <h1
+        style="	text-align: center;
+	    color: #fff;
+	    font-size: 3em;
+	    font-family: 'Lato';
+	    font-weight: 400;">
+        Status:</h1>
+        <p style="	color: #fff;
+	font-family: 'Lato';
+	font-weight: 300;
+	text-align: center;
+  	margin: 0 auto;
+  	font-size: 1.2em;
+  	padding: 1.2em 0;">{{ status }}</p>
+    </div>
+
+    <a href="/about" style="text-decoration: none; color: #fff;
+            ">More info</a>
+
+    <a href="/upload">
+    <div style="color: #fff;>
+        Back
+    </div>
+    </a>
+
+	<script type="text/javascript" src="{{ url_for('static', filename='js/matrix.min.js') }}"async defer>
+	</script>
+</body>
+</html>

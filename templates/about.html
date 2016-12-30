@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Analysis</title>
+    <style>
+        body{
+            color: #ffffff;
+            font-family: 'Lato',"Open Sans", Arial;
+            background-color: black;
+
+            max-width: 1080px;
+            margin: 0 auto !important;
+            float: none !important;
+
+        }
+        img{
+            max-width: 450px;
+        }
+        p{
+            font-size: 20px;
+        }
+        p.italic{
+            font-style: italic;
+        }
+        a {
+            text-decoration: none;
+            color: #ffffff;
+            cursor: pointer;
+        }
+    </style>
+    <script src="{{ url_for('static', filename='js/jquery-3.1.1.js') }}" ></script>
+    <script>
+        $(document).ready(function() {
+            $(".cd").click(function () {
+                $('html,body').animate({
+                        scrollTop: $("#cpymove").offset().top
+                    },
+                    'slow');
+            });
+            $(".cp").click(function () {
+                $('html,body').animate({
+                        scrollTop: $("#cpypst").offset().top
+                    },
+                    'slow');
+            });
+            $(".sc").click(function () {
+                $('html,body').animate({
+                        scrollTop: $("#seam").offset().top
+                    },
+                    'slow');
+            });
+            $(".back").click(function () {
+                $('html,body').animate({
+                    scrollTop: $("#top").offset().top
+                    },
+                    'slow');
+            });
+        });
+    </script>
+</head>
+<body style="text-align: center;">
+    <h1 id="top">What do the results tell us about the images?</h1>
+    <h2>Terminologies:</h2>
+    <p>SIFT: Scale Invariant Feature Transform. Keypoints extracted by performing a Difference in Gaussians to grayscaled image. Used in <a class="cd">clone detection.</a></p>
+    <p>BRIEF: Binary Robust Independent Elementary Feature. Key Points extracted using Central Surround Extremas. Also used in <a class="cd">clone detection.</a></p>
+    <p>ELA: Error Level Analysis. Highlights regions of different compression. Used in <a class="cp">cut-paste</a> and <a class="sc">seam-carving detection.</a></p>
+    <p>DWT: Discrete Wavelet Transform. Uses Haar Wavelets to reveal discrete signals of an image. Used in <a class="cp">cut-paste</a> and <a class="sc">seam-carving detection.</a></p>
+    <p>LBP: Local Binary Pattern. Captures occurrences of different micro patterns. Used in <a class="cp">cut-paste</a> and <a class="sc">seam-carving detection.</a></p>
+    <p>HSV: Hue-Saturation-Value. Highlights discrepancies in luminance of an image. used in <a class="cp">cut-paste</a>.</p>
+    <br>
+
+    <div>
+        <div>
+            <a class="back"><h2 id="cpymove">Copy-Move</h2></a>
+            <div>
+                <div>
+                    <img src="{{ url_for('static', filename='images/sample/cm1.jpg') }}">
+                    <img src="{{ url_for('static', filename='images/sample/cm2.jpg') }}">
+
+                </div>
+            </div>
+            <p class="italic">The clone detection algorithm utilises the matching of SIFT or BRIEF keypoints. Keypoints will be matched if they have a Euclidean distance of less than 40.</p>
+            <p>As seen in the above pictures, important keypoints of the pictures are being picked out, and a line will be drawn if there is a match</p>
+
+        </div>
+    <br>
+        <div>
+            <a class="back"><h2 id="cpypst">Cut-Paste</h2></a>
+            <div>
+                <img  src=" {{ url_for('static', filename='images/sample/cp.jpg') }}">
+                <img  src=" {{ url_for('static', filename='images/sample/cp_ela.jpg') }}">
+                <img  src=" {{ url_for('static', filename='images/sample/cp_lbp.jpg') }}">
+                <img  src=" {{ url_for('static', filename='images/sample/cp_dwt.jpg') }}">
+                <img  src=" {{ url_for('static', filename='images/sample/cp_hsv.jpg') }}">
+            </div>
+                <p class="italic">From left to right: Original image, results of ELA, results of LBP, results of DWT, results of HSV</p>
+                <p>As seen from above, all 4 methods are capable of highlighting the spliced regions, shown by the obvious difference in textures</p>
+        </div>
+    <br>
+        <div>
+            <a class="back"><h2 id="seam">Seam-Carvings</h2></a>
+            <div>
+                <div>
+                <img  src=" {{ url_for('static', filename='images/sample/sc1.png') }}">
+                <img  src=" {{ url_for('static', filename='images/sample/sc1_ela.png') }}">
+                <img  src=" {{ url_for('static', filename='images/sample/sc1_lbp.jpg') }}">
+                <img  src=" {{ url_for('static', filename='images/sample/sc1_dwt.jpg') }}">
+                </div>
+            </div>
+    <br>
+            <p class="italic">From left to right: Original image, results of ELA, results of LBP, results of DWT</p>
+            <p>Vertical streaks of removed seams can be observed in all three images. Note that some methods may be more effective in detecting the remove seams than the other. </p>
+        </div>
+    </div>
+    <a href="/upload">Back</a>
+<br>
+<br>
+</body>
+</html>
