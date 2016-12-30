@@ -1,5 +1,5 @@
 #Fake Finder
-Flask app created during Research@YDSP DSTA.
+Flask app created during Research@YDSP at DSTA.
 
 Fake Finder detects copy-move, cut-paste and seam-carvings.
 
