@@ -10,6 +10,9 @@
   	font-size: 1.2em;
   	padding: 1.2em 0;
     }
+        a:hover{
+            font-weight:bold;
+        }
     </style>
 
     <meta charset="UTF-8">
@@ -28,30 +31,32 @@
 
 
     <div class="output">
-        <h1
-        style="	text-align: center;
-	    color: #fff;
-	    font-size: 3em;
-	    font-family: 'Lato';
-	    font-weight: 400;">
-        Status:</h1>
-        <p style="	color: #fff;
-	font-family: 'Arial',"sans-serif", Helvetica;
-	font-weight: 300;
-	text-align: center;
-  	margin: 0 auto;
-  	font-size: 1.2em;
-  	padding: 1.2em 0;">{{ status }}</p>
-    </div>
+            <h1
+            style="	text-align: center;
+            color: #fff;
+            font-size: 3em;
+            font-family: 'Lato';
+            font-weight: 400;">
+            Status:</h1>
+            <p style="	color: #fff;
+        font-family: 'Arial',"sans-serif", Helvetica;
+        font-weight: 300;
+        text-align: center;
+        margin: 0 auto;
+        font-size: 1.2em;
+        padding: 1.2em 0;">{{ status }}</p>
 
-    <a href="/about" style="text-decoration: none; color: #fff;
-            ">More info</a>
 
-    <a href="/upload">
-    <div style="color: #fff;">
-        Back
+        <a href="/about" style="text-decoration: none; color: #fff;
+                "><p>More info</p></a>
+
+        <a href="/upload">
+        <div style="color: #fff;">
+            Back
+        </div>
+        </a>
+
     </div>
-    </a>
 
 	<script type="text/javascript" src="{{ url_for('static', filename='js/matrix.min.js') }}"async defer>
 	</script>
